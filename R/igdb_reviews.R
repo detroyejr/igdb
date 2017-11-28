@@ -18,7 +18,9 @@
 #' @importFrom jsonlite fromJSON flatten
 #' @importFrom stats setNames
 #' @examples
+#' \dontrun{
 #' igdb_reviews(search = "bioshock")
+#' }
 #'
 #' @seealso [IGDB Api](https://igdb.github.io/api/about/welcome/)
 #'

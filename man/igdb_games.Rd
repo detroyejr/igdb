@@ -32,11 +32,13 @@ all available fields that contain data.}
 Search for a list of games from the IGDB API.
 }
 \examples{
+\dontrun{
 # Search for the game Bioshock, ordering by the release date.
 bioshock <- igdb_games(
   search = "bioshock",
   order = "first_release_date:asc"
 )
+}
 
 }
 \seealso{

@@ -32,8 +32,9 @@ all available fields that contain data.}
 Search for a list of companies from the IGDB API.
 }
 \examples{
+\dontrun{
 igdb_companies(search = "ea")
-
+}
 }
 \seealso{
 \href{https://igdb.github.io/api/about/welcome/}{IGDB API}

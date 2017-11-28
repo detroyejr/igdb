@@ -32,8 +32,9 @@ all available fields that contain data.}
 Search for a list of collections from the IGDB API.
 }
 \examples{
+\dontrun{
 igdb_collections(search = "mario")
-
+}
 }
 \seealso{
 \href{https://igdb.github.io/api/about/welcome/}{IGDB API}

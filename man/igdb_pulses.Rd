@@ -32,7 +32,9 @@ all available fields that contain data.}
 Search for a list of new articles from the IGDB API.
 }
 \examples{
+\dontrun{
 igdb_pulses(search = "activision")
+}
 
 }
 \seealso{

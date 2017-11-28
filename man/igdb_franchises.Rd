@@ -32,7 +32,9 @@ all available fields that contain data.}
 Search for a list of franchises from the IGDB API.
 }
 \examples{
+\dontrun{
 igdb_franchises(search = "call of duty")
+}
 
 }
 \seealso{

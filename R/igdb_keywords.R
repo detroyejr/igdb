@@ -18,7 +18,9 @@
 #' @importFrom jsonlite fromJSON flatten
 #' @importFrom stats setNames
 #' @examples
+#' \dontrun{
 #' igdb_keywords(search = "bathysphere")
+#' }
 #'
 #' @seealso [IGDB API](https://igdb.github.io/api/about/welcome/)
 #'

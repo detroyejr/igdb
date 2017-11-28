@@ -18,8 +18,9 @@
 #' @importFrom jsonlite fromJSON flatten
 #' @importFrom stats setNames
 #' @examples
+#' \dontrun{
 #' igdb_characters(search = "master chief")
-#'
+#' }
 #' @seealso [IGDB API](https://igdb.github.io/api/about/welcome/)
 #'
 #' @export

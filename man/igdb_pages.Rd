@@ -32,7 +32,9 @@ all available fields that contain data.}
 Search for a list of pages from the IGDB API.
 }
 \examples{
+\dontrun{
 igdb_pages(search = "rocket league")
+}
 
 }
 \seealso{

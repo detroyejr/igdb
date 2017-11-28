@@ -32,7 +32,9 @@ all available fields that contain data.}
 Search for a list of people involved in a game's creation from the IGDB API.
 }
 \examples{
+\dontrun{
 igdb_credits(search = "bioshock")
+}
 
 }
 \seealso{

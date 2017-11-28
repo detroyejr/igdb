@@ -19,11 +19,13 @@
 #' @importFrom stats setNames
 #' @seealso [IGDB API](https://igdb.github.io/api/about/welcome/)
 #' @examples
+#' \dontrun{
 #' # Search for the game Bioshock, ordering by the release date.
 #' bioshock <- igdb_games(
 #'   search = "bioshock",
 #'   order = "first_release_date:asc"
 #' )
+#' }
 #'
 #' @export
 igdb_games <- function(search = NULL, id = NULL, n = 50, limit = 50,

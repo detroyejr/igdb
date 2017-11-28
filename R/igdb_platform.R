@@ -18,7 +18,9 @@
 #' @importFrom jsonlite fromJSON flatten
 #' @importFrom stats setNames
 #' @examples
+#' \dontrun{
 #' igdb_platform(search = "xbox")
+#' }
 #'
 #' @seealso [IGDB API](https://igdb.github.io/api/about/welcome/)
 #'

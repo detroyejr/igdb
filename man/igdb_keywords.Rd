@@ -32,7 +32,9 @@ all available fields that contain data.}
 Search for a list of keywords from the IGDB API.
 }
 \examples{
+\dontrun{
 igdb_keywords(search = "bathysphere")
+}
 
 }
 \seealso{

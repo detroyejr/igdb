@@ -32,7 +32,9 @@ all available fields that contain data.}
 Search for a list of platform information from the IGDB API.
 }
 \examples{
+\dontrun{
 igdb_platform(search = "xbox")
+}
 
 }
 \seealso{
