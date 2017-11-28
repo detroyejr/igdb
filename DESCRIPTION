@@ -1,9 +1,14 @@
 Package: igdb
 Title: Access the internet game database api
-Version: 0.0.0.9000
+Version: 0.0.1.0000
 Authors@R: person("Jonathan", "De Troye", email = "detroyejr@outlook.com", role = c("aut", "cre"))
 Description: Provides functions for accessing the internet game database (IGDB) api.
 Depends: R (>= 3.4.2)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1
+Imports:
+  httr,
+  jsonlite
+Suggests: testthat
