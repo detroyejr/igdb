@@ -1,0 +1,134 @@
+---
+title: "IGBD"
+output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Load the package.
+library(igdb)
+```
+
+The IGDB package provides access to the [IGDB API](https://api.igdb.com/) which gives information on video games, developers, reviews, companies, and other related content.
+
+## Install
+
+Use devtools to install from Github.
+
+```{r, eval = FALSE}
+devtools::install_github("jonathande4/igdb")
+```
+
+## Usage
+
+At the time of this package was developed, most of the available API endpoints are covered. These include:
+
+* `igdb_characters`: [Characters](https://igdb.github.io/api/endpoints/character/)
+* `igdb_collections`: [Collections](https://igdb.github.io/api/endpoints/collection/)
+* `igdb_companies`: [Company](https://igdb.github.io/api/endpoints/company/)
+* `igdb_credits`: [Credits](https://igdb.github.io/api/endpoints/credit/)
+* `igdb_franchises`: [Franchise](https://igdb.github.io/api/endpoints/franchise/)
+* `igdb_games`: [Game](https://igdb.github.io/api/endpoints/game/)
+* `igdb_genres`: [Genre](https://igdb.github.io/api/endpoints/genre/)
+* `igdb_keywords`: [Keywords](https://igdb.github.io/api/endpoints/keyword/)
+* `igdb_pages`: [Pages](https://igdb.github.io/api/endpoints/page/)
+* `igdb_platforms`: [Platform](https://igdb.github.io/api/endpoints/platform/)
+* `igdb_pulses`: [Pulse](https://igdb.github.io/api/endpoints/pulse/)
+* `igdb_reviews`: [Reviews](https://igdb.github.io/api/endpoints/review/)
+
+Each function follows a similar format.
+
+* `search`: title or keyword relating to kinds of results you want to return.
+* `id`: each element in the api has an associated id. If you know the id of the game, review, or company you can pass that as a single number or vector of numbers to retrieve only those elements.
+* `n`: maximum number of results to return.
+* `limit`: maximum number of results per page.
+* `scroll`: an alternative method for pagination which allows you to request more than 10,000 rows ([see pagination](https://igdb.github.io/api/references/pagination/)).
+* `filter`: a method for narrowing search results (e.g `"[created_at][gt]=2017-01-01"`) ([see filters](https://igdb.github.io/api/references/filters/)).
+* `fields`: a vector of columns the api should return.
+* `order`: a string that sets the order of the results (e.g `created_at:asc`, `name:desc`)
+
+You can find the full documentation for the API [here](https://igdb.github.io/api/about/welcome/).
+
+## Examples
+
+### Games
+
+```{r}
+# Returns games matching "bioshock" but filters games released after 2015.
+igdb_games(
+  search = "bioshock",
+  order = "first_release_date:asc",
+  filter = "[first_release_date][lt]=2016-01-01",
+  fields = c("id", "name", "first_release_date", "rating", "popularity")
+  )
+```
+
+### Companies
+
+```{r}
+igdb_companies(
+  search = "2k",
+  order = "start_date:desc",
+  fields = c("id", "name", "start_date", "published"),
+  n = 20
+  )
+```
+
+### Reviews
+
+```{r}
+igdb_reviews(
+  search = "bioshock",
+  fields = c("username", "created_at", "title", "game", "views", "platform")
+)
+```
+
+
+### Characters
+
+```{r}
+igdb_characters(
+  search = "booker dewitt"
+)
+```
+
+### Filtering Results
+
+To get results for specific games, use the filter options.
+
+```{r, eval = FALSE}
+# Filter on slug value.
+igdb_games(filter = "[slug][eq] = bioshock-infinite")
+
+# Filter on game id.
+igdb_reviews(filter = "[game][eq] = 538")
+```
+
+## Known Quirks
+
+#### Queries with No Results
+
+In some cases if there are no results, the API will issue a 404 reponse causing a function error.
+
+```{r, error = TRUE}
+igdb_genres(search = "action")
+```
+
+#### Scroll Issue
+
+Scrolling may also not work always work as expected with smaller queries. We still get the first 50 results, but not as many as expected. R will issue a warning when this happens. For better results, switch to pagination using offset.
+
+```{r}
+# Pagination with Scroll.
+games <- igdb_games("halo", scroll = TRUE, n = 100)
+NROW(games)
+
+# Pagination with offset.
+games <- igdb_games("halo", scroll = FALSE, n = 100)
+NROW(games)
+```
+
+
+## Contributing
+
+If you find any bugs, you can file an issue or create a pull request. Each function was created using the same basic template. As long as there are no breaking api changes, adding new endpoints should be simple.
