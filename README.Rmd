@@ -46,8 +46,19 @@ Each function follows a similar format.
 * `filter`: a method for narrowing search results (e.g `"[created_at][gt]=2017-01-01"`) ([see filters](https://igdb.github.io/api/references/filters/)).
 * `fields`: a vector of columns the api should return.
 * `order`: a string that sets the order of the results (e.g `created_at:asc`, `name:desc`)
+* `api_key`: an API key provided when you sign up.
 
 You can find the full documentation for the API [here](https://igdb.github.io/api/about/welcome/).
+
+## API Key
+
+Before you can begin to use the service, [sign up](https://api.igdb.com/signup) and receive an API key. Once you have your key, you can pass it to the function parameter `api_key` or use
+
+```
+Sys.setenv("IGDB_KEY" = 'YOUR_API_KEY`)
+```
+
+to add it to your environment. The function `igdb_key()` will look in the system environment for a variable with that name.
 
 ## Examples
 
