@@ -9,6 +9,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(igdb)
 ```
 
+
+[![Travis-CI Build Status](https://travis-ci.org/jonathande4/igdb.svg?branch=master)](https://travis-ci.org/jonathande4/igdb)
+
 The IGDB package provides access to the [IGDB API](https://api.igdb.com/) which gives information on video games, developers, reviews, companies, and other related content.
 
 ## Install
