@@ -10,7 +10,7 @@ library(igdb)
 ```
 
 
-[![Travis-CI Build Status](https://travis-ci.org/jonathande4/igdb.svg?branch=master)](https://travis-ci.org/jonathande4/igdb)
+[![Travis-CI Build Status](https://travis-ci.org/detroyejr/igdb.svg?branch=master)](https://travis-ci.org/detroyejr/igdb)
 
 The IGDB package provides access to the [IGDB API](https://api.igdb.com/) which gives information on video games, developers, reviews, companies, and other related content.
 
@@ -19,7 +19,7 @@ The IGDB package provides access to the [IGDB API](https://api.igdb.com/) which 
 Use devtools to install from Github.
 
 ```{r, eval = FALSE}
-devtools::install_github("jonathande4/igdb")
+devtools::install_github("detroyejr/igdb")
 ```
 
 ## Usage

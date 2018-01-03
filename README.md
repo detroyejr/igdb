@@ -1,7 +1,7 @@
 IGBD
 ================
 
-[![Travis-CI Build Status](https://travis-ci.org/jonathande4/igdb.svg?branch=master)](https://travis-ci.org/jonathande4/igdb)
+[![Travis-CI Build Status](https://travis-ci.org/detroyejr/igdb.svg?branch=master)](https://travis-ci.org/detroyejr/igdb)
 
 The IGDB package provides access to the [IGDB API](https://api.igdb.com/) which gives information on video games, developers, reviews, companies, and other related content.
 
@@ -11,7 +11,7 @@ Install
 Use devtools to install from Github.
 
 ``` r
-devtools::install_github("jonathande4/igdb")
+devtools::install_github("detroyejr/igdb")
 ```
 
 Usage
@@ -71,12 +71,12 @@ igdb_games(
 ```
 
     ##       id                                         name   rating popularity
-    ## 1     20                                     BioShock 89.14144      13.00
-    ## 2     21                                   BioShock 2 81.76016       6.00
+    ## 1     20                                     BioShock 89.14002      13.00
+    ## 2     21                                   BioShock 2 81.75778       5.25
     ## 3  44571                  Bioshock 2: Rapture Edition       NA       1.00
     ## 4  47440                   BioShock 2 Special Edition       NA       1.00
-    ## 5  14543                    BioShock 2: Minerva’s Den 85.37396       1.75
-    ## 6    538                            Bioshock Infinite 84.78717      11.50
+    ## 5  14543                    BioShock 2: Minerva’s Den 85.37396       2.00
+    ## 6    538                            Bioshock Infinite 84.78547      11.50
     ## 7  41598 Bioshock Infinite: Ultimate Songbird Edition       NA       1.25
     ## 8  20115       BioShock Infinite: Clash in the Clouds       NA       1.25
     ## 9  10047             BioShock Infinite: Burial at Sea 86.10750       2.00
@@ -106,15 +106,15 @@ igdb_companies(
 
     ##       id                      name          start_date
     ## 1   3957                       M2H 2015-01-08 23:00:00
-    ## 2   9111              kChamp Games 2008-12-30 23:00:00
-    ## 3    301                  2K Czech 2008-12-30 23:00:00
+    ## 2    301                  2K Czech 2008-12-31 00:00:00
+    ## 3   9111              kChamp Games 2008-12-30 23:00:00
     ## 4    649                 2K Boston 2007-12-30 23:00:00
     ## 5   2001                   2K Play 2007-09-09 22:00:00
     ## 6     15                  2K Marin 2007-01-01 00:00:00
     ## 7     18                  2K China 2006-03-31 00:00:00
     ## 8      8                  2K Games 2005-01-25 00:00:00
     ## 9   1975                 2K Sports 2005-01-24 23:00:00
-    ## 10 10473      F K Digital Pty Ltd. 2004-12-30 23:00:00
+    ## 10 10473      F K Digital Pty Ltd. 2004-12-31 00:00:00
     ## 11 13206                  S.K.I.F. 1996-12-30 23:00:00
     ## 12  1334           H2O Interactive 1994-12-30 23:00:00
     ## 13 13413 L&K Logic Korea Co., Ltd.                <NA>
@@ -127,8 +127,8 @@ igdb_companies(
     ## 20  2325                    K2 LLC                <NA>
     ##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   published
     ## 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           8037, 23993, 8036, 36718, 35904
-    ## 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              17904, 34162
-    ## 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      NULL
+    ## 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      NULL
+    ## 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              17904, 34162
     ## 4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      NULL
     ## 5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    4057, 4058, 5072, 7976, 7977, 7980, 7978, 13179, 14845
     ## 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      NULL
