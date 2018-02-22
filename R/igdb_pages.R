@@ -59,8 +59,11 @@ igdb_pages <- function(search = NULL, id = NULL, n = 50, limit = 50,
   query <- httr::GET(query, headers)
 
   # Check the request for problems.
-  httr::stop_for_status(query)
-  if(httr::http_type(query) != "application/json") {
+  if (httr::http_error(query)) {
+    stop(httr::http_status("query")[["message"]])
+  }
+  
+  if (httr::http_type(query) != "application/json") {
     stop("Request did not return json", call. = FALSE)
   }
 
@@ -105,7 +108,7 @@ igdb_pages <- function(search = NULL, id = NULL, n = 50, limit = 50,
 
       # Check the request for problems.
       if (httr::http_error(query)) {
-        warning("Last call returned an error")
+        warning(httr::http_status(query)[["message"]])
         break
       }
 
