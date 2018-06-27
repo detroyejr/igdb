@@ -63,7 +63,7 @@ igdb_games <- function(search = NULL, id = NULL, n = 50, limit = 50,
 
   # Check the request for problems.
   if (httr::http_error(query)) {
-    stop(httr::http_status("query")[["message"]])
+    stop(httr::http_status(query)[["message"]])
   }
 
   if (httr::http_type(query) != "application/json") {
