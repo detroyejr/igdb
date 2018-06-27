@@ -30,7 +30,7 @@
 #' @export
 igdb_games <- function(search = NULL, id = NULL, n = 50, limit = 50,
                        scroll = FALSE, filter = NULL, fields = NULL,
-                       order = NULL, api_key = igdb_key()) {
+                       order = NULL, api_key = igdb_key(), ...) {
   # Configure parameters.
   base_url <- "https://api-2445582011268.apicast.io"
   id <- if (!is.null(id)) paste0(id, collapse = ",")  else NULL
@@ -46,7 +46,8 @@ igdb_games <- function(search = NULL, id = NULL, n = 50, limit = 50,
       fields = fields,
       order = order,
       scroll = ifelse(scroll == TRUE, 1, 0),
-      limit = limit
+      limit = limit,
+      ...
       )
     )
 
