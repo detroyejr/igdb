@@ -13,6 +13,7 @@
 #' all available fields that contain data.
 #' @param order a string defining how results are sorted.
 #' @param api_key the IGDB api key.
+#' @param ... include extra url arguments (e.g. expander).
 #'
 #' @importFrom httr GET modify_url stop_for_status http_type headers content
 #' @importFrom jsonlite fromJSON flatten

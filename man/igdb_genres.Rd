@@ -6,7 +6,7 @@
 \usage{
 igdb_genres(search = NULL, id = NULL, n = 50, limit = 50,
   scroll = FALSE, filter = NULL, fields = NULL, order = NULL,
-  api_key = igdb_key())
+  api_key = igdb_key(), ...)
 }
 \arguments{
 \item{search}{a string with a keyword or title.}
@@ -27,6 +27,8 @@ all available fields that contain data.}
 \item{order}{a string defining how results are sorted.}
 
 \item{api_key}{the IGDB api key.}
+
+\item{...}{include extra url arguments (e.g. expander).}
 }
 \description{
 Search for a list of genres from the IGDB API.

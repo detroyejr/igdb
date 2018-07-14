@@ -13,6 +13,7 @@
 #' all available fields that contain data.
 #' @param order a string defining how results are sorted.
 #' @param api_key the IGDB api key.
+#' @param ... include extra url arguments (e.g. expander).
 #'
 #' @importFrom httr GET modify_url stop_for_status http_type headers content
 #' @importFrom jsonlite fromJSON flatten
@@ -27,7 +28,7 @@
 #' @export
 igdb_reviews <- function(search = NULL, id = NULL, n = 50, limit = 50,
                          scroll = FALSE, filter = NULL, fields = NULL,
-                         order = NULL, api_key = igdb_key()) {
+                         order = NULL, api_key = igdb_key(), ...) {
   # Configure parameters.
   base_url <- "https://api-2445582011268.apicast.io"
   id <- if (!is.null(id)) paste0(id, collapse = ",")  else NULL
@@ -43,7 +44,8 @@ igdb_reviews <- function(search = NULL, id = NULL, n = 50, limit = 50,
       fields = fields,
       order = order,
       scroll = ifelse(scroll == TRUE, 1, 0),
-      limit = limit
+      limit = limit,
+      ...
     )
   )
 
